@@ -1,0 +1,14 @@
+{
+  "brands": [
+    { "brand_id": "openai", "display_name": "OpenAI", "priority": 1, "authors": ["openai"] },
+    { "brand_id": "anthropic", "display_name": "Anthropic", "priority": 2, "authors": ["anthropic"] },
+    { "brand_id": "google", "display_name": "Google", "priority": 3, "authors": ["google"] },
+    { "brand_id": "xai", "display_name": "xAI / Grok", "priority": 4, "authors": ["x-ai"] },
+    { "brand_id": "meta", "display_name": "Meta", "priority": 5, "authors": ["meta-llama"] },
+    { "brand_id": "deepseek", "display_name": "DeepSeek", "priority": 6, "authors": ["deepseek"] },
+    { "brand_id": "qwen", "display_name": "Alibaba / Qwen", "priority": 7, "authors": ["qwen"] },
+    { "brand_id": "moonshot", "display_name": "Moonshot / Kimi", "priority": 8, "authors": ["moonshotai"] },
+    { "brand_id": "zai", "display_name": "Z AI / GLM", "priority": 9, "authors": ["z-ai"] },
+    { "brand_id": "mistral", "display_name": "Mistral", "priority": 10, "authors": ["mistralai"] }
+  ]
+}

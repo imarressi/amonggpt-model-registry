@@ -1,0 +1,73 @@
+# Daily roster refresh. No inference key: the catalog endpoint is unauthenticated, and this
+# workflow only ever needs the repo-scoped GITHUB_TOKEN. Scheduled runs are best-effort, so
+# public/freshness.json carries the timestamps consumers gate on.
+name: refresh
+on:
+  schedule:
+    - cron: '17 8 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - run: pnpm test
+
+      - name: refresh roster
+        id: refresh
+        # exit 1 = published with alert(s); only 2+ means nothing was written
+        run: |
+          set +e
+          pnpm refresh
+          code=$?
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+          [ "$code" -ge 2 ] && exit "$code"
+          exit 0
+
+      - name: commit publication
+        run: |
+          git config user.name "amonggpt-registry-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add public reports
+          if git diff --cached --quiet; then
+            echo "nothing to publish"
+          else
+            git commit -m "refresh: $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push
+          fi
+
+      - name: open issue for alerts
+        if: steps.refresh.outputs.code == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          body="$(node -e 'const a=require("./reports/alerts.json").alerts; console.log(a.map(x=>`- **${x.level}** \`${x.code}\`: ${x.message}`).join("\n"))')"
+          gh issue create \
+            --title "Roster alerts $(date -u +%Y-%m-%d)" \
+            --body "$body"$'\n\n'"See reports/alerts.json in the latest refresh commit." \
+            --label alerts || gh issue create --title "Roster alerts $(date -u +%Y-%m-%d)" --body "$body"
+
+      - name: open issue on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "Roster refresh FAILED $(date -u +%Y-%m-%d)" \
+            --body "The daily refresh did not publish. The last valid roster is still live. Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" || true

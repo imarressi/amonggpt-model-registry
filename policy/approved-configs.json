@@ -1,0 +1,186 @@
+{
+  "_comment": "Human-approved model configurations. Changes land only via PR. The daily refresh verifies these against the live catalog; it never promotes anything on its own. 'reasoning off' is a hard game requirement (harness sends {enabled:false}; Google gets {effort:'minimal'}) — models whose catalog entry says reasoning.mandatory=true without a supported minimal effort are ineligible.",
+  "openai": {
+    "economy": {
+      "model_id": "openai/gpt-6-luna",
+      "request_parameters": { "reasoning": { "enabled": false } },
+      "provider_policy": { "require_parameters": false, "allow_fallbacks": true },
+      "reason": "Cheapest current-generation OpenAI chat tier ($0.10/$0.50 per MTok) that can disable reasoning (supports effort 'none'). gpt-5-nano is cheaper but reasoning-mandatory.",
+      "evidence": ["OpenRouter catalog 2026-09-29: reasoning.mandatory=false, supported_efforts includes 'none'"],
+      "notes": "GPT-6 API models do not support the temperature parameter; OpenRouter drops it silently. Do not send require_parameters=true with temperature for this config.",
+      "approved_at": "2026-09-29"
+    },
+    "flagship": {
+      "model_id": "openai/gpt-6-sol",
+      "request_parameters": { "reasoning": { "enabled": false } },
+      "provider_policy": { "require_parameters": false, "allow_fallbacks": true },
+      "reason": "Strongest OpenAI model that honors reasoning-off (gpt-6-astra and gpt-5.x pro tiers are reasoning-mandatory or reasoning-priced).",
+      "evidence": ["OpenRouter catalog 2026-09-29: reasoning.mandatory=false, supported_efforts includes 'none'"],
+      "notes": "Temperature unsupported, same as gpt-6-luna.",
+      "approved_at": "2026-09-29"
+    }
+  },
+  "anthropic": {
+    "economy": {
+      "model_id": "anthropic/claude-haiku-4.5",
+      "request_parameters": { "temperature": 0.9, "reasoning": { "enabled": false } },
+      "provider_policy": { "require_parameters": false, "allow_fallbacks": true },
+      "reason": "Reference CHEAP_ROSTER incumbent, battle-tested in the game.",
+      "evidence": ["reference CHEAP_ROSTER (slugs verified live)", "OpenRouter catalog 2026-09-29: reasoning.mandatory=false"],
+      "approved_at": "2026-09-29"
+    },
+    "flagship": {
+      "model_id": "anthropic/claude-opus-5",
+      "request_parameters": { "temperature": 0.9, "reasoning": { "enabled": false } },
+      "provider_policy": { "require_parameters": false, "allow_fallbacks": true },
+      "reason": "Strongest Anthropic model that honors reasoning-off. claude-opus-5.5, claude-sonnet-5.5 and claude-fable-5.x are reasoning-mandatory and ineligible under the game contract.",
+      "evidence": ["reference FRONTIER_ROSTER (live-tested Aug 2026)", "OpenRouter catalog 2026-09-29: reasoning.mandatory=false"],
+      "approved_at": "2026-09-29"
+    }
+  },
+  "google": {
+    "economy": {
+      "model_id": "google/gemini-3.1-flash-lite",
+      "request_parameters": { "temperature": 0.9, "reasoning": { "effort": "minimal" } },
+      "provider_policy": { "require_parameters": false, "allow_fallbacks": true },
+      "reason": "Reference CHEAP_ROSTER incumbent. Google models only accept effort 'minimal' as the off-position — the harness already special-cases this.",
+      "evidence": ["reference CHEAP_ROSTER (slugs verified live)", "OpenRouter catalog 2026-09-29: supported_efforts includes 'minimal'"],
+      "approved_at": "2026-09-29"
+    },
+    "flagship": {
+      "model_id": "google/gemini-3.6-flash",
+      "request_parameters": { "temperature": 0.9, "reasoning": { "effort": "minimal" } },
+      "request_parameters_note": "reasoning is mandatory on this model; 'minimal' is the approved floor and matches the harness's Google carve-out.",
+      "provider_policy": { "require_parameters": false, "allow_fallbacks": true },
+      "reason": "Newest Gemini that still supports effort 'minimal' (3.7-flash and 3.8-flash floor at 'low', which burns reasoning tokens against the 110-token game budget). No stable non-preview Gemini Pro exists on OpenRouter; gemini-2.5-pro expires 2026-10-20.",
+      "evidence": ["reference FRONTIER_ROSTER (live-tested Aug 2026)", "OpenRouter catalog 2026-09-29: supported_efforts includes 'minimal'"],
+      "approved_at": "2026-09-29"
+    }
+  },
+  "xai": {
+    "economy": {
+      "model_id": "x-ai/grok-4.3",
+      "request_parameters": { "temperature": 0.9, "reasoning": { "enabled": false } },
+      "provider_policy": { "require_parameters": false, "allow_fallbacks": true },
+      "reason": "Cheapest xAI model ($1.25/$2.50 per MTok, tied with grok-4.20 but newer) that supports reasoning 'none'.",
+      "evidence": ["OpenRouter catalog 2026-09-29: created 2026-04-30, reasoning.mandatory=false"],
+      "approved_at": "2026-09-29"
+    },
+    "flagship": {
+      "model_id": "x-ai/grok-4.3",
+      "request_parameters": { "temperature": 0.9, "reasoning": { "enabled": false } },
+      "provider_policy": { "require_parameters": false, "allow_fallbacks": true },
+      "reason": "Same model on both tracks: every newer Grok (4.5, 4.6, 4.7) is reasoning-mandatory and ineligible under the game contract.",
+      "evidence": ["OpenRouter catalog 2026-09-29: grok-4.5/4.6/4.7 all reasoning.mandatory=true"],
+      "approved_at": "2026-09-29"
+    }
+  },
+  "meta": {
+    "economy": {
+      "model_id": "meta-llama/llama-3.3-70b-instruct",
+      "request_parameters": { "temperature": 0.9 },
+      "provider_policy": { "require_parameters": false, "allow_fallbacks": true },
+      "reason": "Reference CHEAP_ROSTER incumbent, battle-tested in the game.",
+      "evidence": ["reference CHEAP_ROSTER (slugs verified live)"],
+      "approved_at": "2026-09-29"
+    },
+    "flagship": {
+      "model_id": "meta-llama/llama-4-maverick",
+      "request_parameters": { "temperature": 0.9 },
+      "provider_policy": { "require_parameters": false, "allow_fallbacks": true },
+      "reason": "Largest Meta model on OpenRouter (Meta has published nothing newer there as of 2026-09).",
+      "evidence": ["OpenRouter catalog 2026-09-29: newest meta-llama entry"],
+      "approved_at": "2026-09-29"
+    }
+  },
+  "deepseek": {
+    "economy": {
+      "model_id": "deepseek/deepseek-v4-flash-0731",
+      "request_parameters": { "temperature": 0.9, "reasoning": { "enabled": false } },
+      "provider_policy": { "require_parameters": false, "allow_fallbacks": true },
+      "reason": "Cheapest blended game cost of any DeepSeek ($0.018/$0.32 per MTok); reference FRONTIER_ROSTER incumbent.",
+      "evidence": ["reference FRONTIER_ROSTER (live-tested Aug 2026)", "OpenRouter catalog 2026-09-29: reasoning.mandatory=false"],
+      "approved_at": "2026-09-29"
+    },
+    "flagship": {
+      "model_id": "deepseek/deepseek-v4-pro",
+      "request_parameters": { "temperature": 0.9, "reasoning": { "enabled": false } },
+      "provider_policy": { "require_parameters": false, "allow_fallbacks": true },
+      "reason": "DeepSeek's top general model on OpenRouter; reasoning can be disabled.",
+      "evidence": ["OpenRouter catalog 2026-09-29: reasoning.mandatory=false"],
+      "approved_at": "2026-09-29"
+    }
+  },
+  "qwen": {
+    "economy": {
+      "model_id": "qwen/qwen3.7-flash",
+      "request_parameters": { "temperature": 0.9, "reasoning": { "enabled": false } },
+      "provider_policy": { "require_parameters": false, "allow_fallbacks": true },
+      "reason": "Cheapest capable Qwen ($0.03/$0.13 per MTok); reference FRONTIER_ROSTER incumbent.",
+      "evidence": ["reference FRONTIER_ROSTER (live-tested Aug 2026)", "OpenRouter catalog 2026-09-29: reasoning.mandatory=false"],
+      "approved_at": "2026-09-29"
+    },
+    "flagship": {
+      "model_id": "qwen/qwen3.7-max",
+      "request_parameters": { "temperature": 0.9, "reasoning": { "enabled": false } },
+      "provider_policy": { "require_parameters": false, "allow_fallbacks": true },
+      "reason": "Strongest Qwen that honors reasoning-off (qwen3.8-max-0902 and qwen3.8-max-prime are reasoning-mandatory).",
+      "evidence": ["OpenRouter catalog 2026-09-29: reasoning.mandatory=false"],
+      "approved_at": "2026-09-29"
+    }
+  },
+  "moonshot": {
+    "economy": {
+      "model_id": "moonshotai/kimi-k2.5",
+      "request_parameters": { "temperature": 0.9, "reasoning": { "enabled": false } },
+      "provider_policy": { "require_parameters": false, "allow_fallbacks": true },
+      "reason": "Cheapest blended game cost of any Kimi ($0.45/$2.25 per MTok), newer than the reference's kimi-k2-0905.",
+      "evidence": ["OpenRouter catalog 2026-09-29: reasoning.mandatory=false"],
+      "approved_at": "2026-09-29"
+    },
+    "flagship": {
+      "model_id": "moonshotai/kimi-k3",
+      "request_parameters": { "temperature": 0.9, "reasoning": { "enabled": false } },
+      "provider_policy": { "require_parameters": false, "allow_fallbacks": true },
+      "reason": "Moonshot's flagship; reference FRONTIER_ROSTER incumbent; reasoning can be disabled.",
+      "evidence": ["reference FRONTIER_ROSTER (live-tested Aug 2026)", "OpenRouter catalog 2026-09-29: reasoning.mandatory=false"],
+      "approved_at": "2026-09-29"
+    }
+  },
+  "zai": {
+    "economy": {
+      "model_id": "z-ai/glm-4.7-flash",
+      "request_parameters": { "temperature": 0.9, "reasoning": { "enabled": false } },
+      "provider_policy": { "require_parameters": false, "allow_fallbacks": true },
+      "reason": "Cheapest eligible GLM ($0.061/$0.40 per MTok). glm-5.3-flash is newer but reasoning-mandatory and ineligible.",
+      "evidence": ["OpenRouter catalog 2026-09-29: reasoning.mandatory=false"],
+      "approved_at": "2026-09-29"
+    },
+    "flagship": {
+      "model_id": "z-ai/glm-5",
+      "request_parameters": { "temperature": 0.9, "reasoning": { "enabled": false } },
+      "provider_policy": { "require_parameters": false, "allow_fallbacks": true },
+      "reason": "Strongest GLM with documented game evidence that honors reasoning-off. glm-5.3 and glm-5.3-prime are reasoning-mandatory; glm-5.2 is a candidate pending evaluation.",
+      "evidence": ["reference FRONTIER_ROSTER (live-tested Aug 2026)", "OpenRouter catalog 2026-09-29: reasoning.mandatory=false"],
+      "approved_at": "2026-09-29"
+    }
+  },
+  "mistral": {
+    "economy": {
+      "model_id": "mistralai/ministral-8b-2512",
+      "request_parameters": { "temperature": 0.9 },
+      "provider_policy": { "require_parameters": false, "allow_fallbacks": true },
+      "reason": "Reference CHEAP_ROSTER incumbent, battle-tested in the game.",
+      "evidence": ["reference CHEAP_ROSTER (slugs verified live)"],
+      "approved_at": "2026-09-29"
+    },
+    "flagship": {
+      "model_id": "mistralai/mistral-medium-3-5",
+      "request_parameters": { "temperature": 0.9, "reasoning": { "enabled": false } },
+      "provider_policy": { "require_parameters": false, "allow_fallbacks": true },
+      "reason": "Mistral's premium-priced current tier ($1.50/$7.50 per MTok, above mistral-large-2512), supports reasoning 'none'. mistral-large-2512 is the fallback candidate.",
+      "evidence": ["OpenRouter catalog 2026-09-29: priced above every other mistralai entry, reasoning.mandatory=false"],
+      "approved_at": "2026-09-29"
+    }
+  }
+}

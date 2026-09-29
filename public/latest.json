@@ -1,0 +1,802 @@
+{
+  "schema_version": 1,
+  "registry_version": "2026-09-29-fad9935",
+  "generated_at": "2026-09-29T21:45:46.237Z",
+  "catalog_checked_at": "2026-09-29T21:45:46.386Z",
+  "catalog_model_count": 464,
+  "default_track": "economy",
+  "api": {
+    "provider": "openrouter",
+    "base_url": "https://openrouter.ai/api/v1",
+    "chat_path": "/chat/completions"
+  },
+  "brands": [
+    {
+      "brand_id": "openai",
+      "display_name": "OpenAI",
+      "priority": 1,
+      "tracks": {
+        "economy": {
+          "status": "active",
+          "config_id": "7353e27780c1",
+          "model_id": "openai/gpt-6-luna",
+          "canonical_slug": "openai/gpt-6-luna-20260922",
+          "display_name": "OpenAI: GPT-6 Luna",
+          "request_parameters": {
+            "reasoning": {
+              "enabled": false
+            }
+          },
+          "provider_policy": {
+            "require_parameters": false,
+            "allow_fallbacks": true
+          },
+          "pricing": {
+            "currency": "USD",
+            "prompt_per_token": "0.0000001",
+            "completion_per_token": "0.0000005",
+            "basis": "catalog",
+            "checked_at": "2026-09-29T21:45:46.386Z"
+          },
+          "context_length": 1050000,
+          "expiration_date": null,
+          "validation": {
+            "status": "static-checks",
+            "checked_at": "2026-09-29T21:45:46.237Z"
+          },
+          "selection": {
+            "reason": "Cheapest current-generation OpenAI chat tier ($0.10/$0.50 per MTok) that can disable reasoning (supports effort 'none'). gpt-5-nano is cheaper but reasoning-mandatory.",
+            "evidence": [
+              "OpenRouter catalog 2026-09-29: reasoning.mandatory=false, supported_efforts includes 'none'"
+            ]
+          }
+        },
+        "flagship": {
+          "status": "active",
+          "config_id": "f51e8ebff611",
+          "model_id": "openai/gpt-6-sol",
+          "canonical_slug": "openai/gpt-6-sol-20260922",
+          "display_name": "OpenAI: GPT-6 Sol",
+          "request_parameters": {
+            "reasoning": {
+              "enabled": false
+            }
+          },
+          "provider_policy": {
+            "require_parameters": false,
+            "allow_fallbacks": true
+          },
+          "pricing": {
+            "currency": "USD",
+            "prompt_per_token": "0.000002",
+            "completion_per_token": "0.00001",
+            "basis": "catalog",
+            "checked_at": "2026-09-29T21:45:46.386Z"
+          },
+          "context_length": 1050000,
+          "expiration_date": null,
+          "validation": {
+            "status": "static-checks",
+            "checked_at": "2026-09-29T21:45:46.237Z"
+          },
+          "selection": {
+            "reason": "Strongest OpenAI model that honors reasoning-off (gpt-6-astra and gpt-5.x pro tiers are reasoning-mandatory or reasoning-priced).",
+            "evidence": [
+              "OpenRouter catalog 2026-09-29: reasoning.mandatory=false, supported_efforts includes 'none'"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "brand_id": "anthropic",
+      "display_name": "Anthropic",
+      "priority": 2,
+      "tracks": {
+        "economy": {
+          "status": "active",
+          "config_id": "56c799095ee9",
+          "model_id": "anthropic/claude-haiku-4.5",
+          "canonical_slug": "anthropic/claude-4.5-haiku-20251001",
+          "display_name": "Anthropic: Claude Haiku 4.5",
+          "request_parameters": {
+            "temperature": 0.9,
+            "reasoning": {
+              "enabled": false
+            }
+          },
+          "provider_policy": {
+            "require_parameters": false,
+            "allow_fallbacks": true
+          },
+          "pricing": {
+            "currency": "USD",
+            "prompt_per_token": "0.000001",
+            "completion_per_token": "0.000005",
+            "basis": "catalog",
+            "checked_at": "2026-09-29T21:45:46.386Z"
+          },
+          "context_length": 200000,
+          "expiration_date": null,
+          "validation": {
+            "status": "static-checks",
+            "checked_at": "2026-09-29T21:45:46.237Z"
+          },
+          "selection": {
+            "reason": "Reference CHEAP_ROSTER incumbent, battle-tested in the game.",
+            "evidence": [
+              "reference CHEAP_ROSTER (slugs verified live)",
+              "OpenRouter catalog 2026-09-29: reasoning.mandatory=false"
+            ]
+          }
+        },
+        "flagship": {
+          "status": "active",
+          "config_id": "558cd66d749e",
+          "model_id": "anthropic/claude-opus-5",
+          "canonical_slug": "anthropic/claude-opus-5-20260723",
+          "display_name": "Anthropic: Claude Opus 5",
+          "request_parameters": {
+            "temperature": 0.9,
+            "reasoning": {
+              "enabled": false
+            }
+          },
+          "provider_policy": {
+            "require_parameters": false,
+            "allow_fallbacks": true
+          },
+          "pricing": {
+            "currency": "USD",
+            "prompt_per_token": "0.000005",
+            "completion_per_token": "0.000025",
+            "basis": "catalog",
+            "checked_at": "2026-09-29T21:45:46.386Z"
+          },
+          "context_length": 1000000,
+          "expiration_date": null,
+          "validation": {
+            "status": "static-checks",
+            "checked_at": "2026-09-29T21:45:46.237Z"
+          },
+          "selection": {
+            "reason": "Strongest Anthropic model that honors reasoning-off. claude-opus-5.5, claude-sonnet-5.5 and claude-fable-5.x are reasoning-mandatory and ineligible under the game contract.",
+            "evidence": [
+              "reference FRONTIER_ROSTER (live-tested Aug 2026)",
+              "OpenRouter catalog 2026-09-29: reasoning.mandatory=false"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "brand_id": "google",
+      "display_name": "Google",
+      "priority": 3,
+      "tracks": {
+        "economy": {
+          "status": "active",
+          "config_id": "04b50c567510",
+          "model_id": "google/gemini-3.1-flash-lite",
+          "canonical_slug": "google/gemini-3.1-flash-lite-20260507",
+          "display_name": "Google: Gemini 3.1 Flash Lite",
+          "request_parameters": {
+            "temperature": 0.9,
+            "reasoning": {
+              "effort": "minimal"
+            }
+          },
+          "provider_policy": {
+            "require_parameters": false,
+            "allow_fallbacks": true
+          },
+          "pricing": {
+            "currency": "USD",
+            "prompt_per_token": "0.00000025",
+            "completion_per_token": "0.0000015",
+            "basis": "catalog",
+            "checked_at": "2026-09-29T21:45:46.386Z"
+          },
+          "context_length": 1048576,
+          "expiration_date": null,
+          "validation": {
+            "status": "static-checks",
+            "checked_at": "2026-09-29T21:45:46.237Z"
+          },
+          "selection": {
+            "reason": "Reference CHEAP_ROSTER incumbent. Google models only accept effort 'minimal' as the off-position — the harness already special-cases this.",
+            "evidence": [
+              "reference CHEAP_ROSTER (slugs verified live)",
+              "OpenRouter catalog 2026-09-29: supported_efforts includes 'minimal'"
+            ]
+          }
+        },
+        "flagship": {
+          "status": "active",
+          "config_id": "4d3b37e418cd",
+          "model_id": "google/gemini-3.6-flash",
+          "canonical_slug": "google/gemini-3.6-flash-20260721",
+          "display_name": "Google: Gemini 3.6 Flash",
+          "request_parameters": {
+            "temperature": 0.9,
+            "reasoning": {
+              "effort": "minimal"
+            }
+          },
+          "provider_policy": {
+            "require_parameters": false,
+            "allow_fallbacks": true
+          },
+          "pricing": {
+            "currency": "USD",
+            "prompt_per_token": "0.00000075",
+            "completion_per_token": "0.00000375",
+            "basis": "catalog",
+            "checked_at": "2026-09-29T21:45:46.386Z"
+          },
+          "context_length": 1048576,
+          "expiration_date": null,
+          "validation": {
+            "status": "static-checks",
+            "checked_at": "2026-09-29T21:45:46.237Z"
+          },
+          "selection": {
+            "reason": "Newest Gemini that still supports effort 'minimal' (3.7-flash and 3.8-flash floor at 'low', which burns reasoning tokens against the 110-token game budget). No stable non-preview Gemini Pro exists on OpenRouter; gemini-2.5-pro expires 2026-10-20.",
+            "evidence": [
+              "reference FRONTIER_ROSTER (live-tested Aug 2026)",
+              "OpenRouter catalog 2026-09-29: supported_efforts includes 'minimal'"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "brand_id": "xai",
+      "display_name": "xAI / Grok",
+      "priority": 4,
+      "tracks": {
+        "economy": {
+          "status": "active",
+          "config_id": "2944d7fb8baa",
+          "model_id": "x-ai/grok-4.3",
+          "canonical_slug": "x-ai/grok-4.3-20260430",
+          "display_name": "SpaceXAI: Grok 4.3",
+          "request_parameters": {
+            "temperature": 0.9,
+            "reasoning": {
+              "enabled": false
+            }
+          },
+          "provider_policy": {
+            "require_parameters": false,
+            "allow_fallbacks": true
+          },
+          "pricing": {
+            "currency": "USD",
+            "prompt_per_token": "0.00000125",
+            "completion_per_token": "0.0000025",
+            "basis": "catalog",
+            "checked_at": "2026-09-29T21:45:46.386Z"
+          },
+          "context_length": 1000000,
+          "expiration_date": null,
+          "validation": {
+            "status": "static-checks",
+            "checked_at": "2026-09-29T21:45:46.237Z"
+          },
+          "selection": {
+            "reason": "Cheapest xAI model ($1.25/$2.50 per MTok, tied with grok-4.20 but newer) that supports reasoning 'none'.",
+            "evidence": [
+              "OpenRouter catalog 2026-09-29: created 2026-04-30, reasoning.mandatory=false"
+            ]
+          }
+        },
+        "flagship": {
+          "status": "active",
+          "config_id": "2944d7fb8baa",
+          "model_id": "x-ai/grok-4.3",
+          "canonical_slug": "x-ai/grok-4.3-20260430",
+          "display_name": "SpaceXAI: Grok 4.3",
+          "request_parameters": {
+            "temperature": 0.9,
+            "reasoning": {
+              "enabled": false
+            }
+          },
+          "provider_policy": {
+            "require_parameters": false,
+            "allow_fallbacks": true
+          },
+          "pricing": {
+            "currency": "USD",
+            "prompt_per_token": "0.00000125",
+            "completion_per_token": "0.0000025",
+            "basis": "catalog",
+            "checked_at": "2026-09-29T21:45:46.386Z"
+          },
+          "context_length": 1000000,
+          "expiration_date": null,
+          "validation": {
+            "status": "static-checks",
+            "checked_at": "2026-09-29T21:45:46.237Z"
+          },
+          "selection": {
+            "reason": "Same model on both tracks: every newer Grok (4.5, 4.6, 4.7) is reasoning-mandatory and ineligible under the game contract.",
+            "evidence": [
+              "OpenRouter catalog 2026-09-29: grok-4.5/4.6/4.7 all reasoning.mandatory=true"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "brand_id": "meta",
+      "display_name": "Meta",
+      "priority": 5,
+      "tracks": {
+        "economy": {
+          "status": "active",
+          "config_id": "b4c6775ef51d",
+          "model_id": "meta-llama/llama-3.3-70b-instruct",
+          "canonical_slug": "meta-llama/llama-3.3-70b-instruct",
+          "display_name": "Meta: Llama 3.3 70B Instruct",
+          "request_parameters": {
+            "temperature": 0.9
+          },
+          "provider_policy": {
+            "require_parameters": false,
+            "allow_fallbacks": true
+          },
+          "pricing": {
+            "currency": "USD",
+            "prompt_per_token": "0.0000001",
+            "completion_per_token": "0.00000032",
+            "basis": "catalog",
+            "checked_at": "2026-09-29T21:45:46.386Z"
+          },
+          "context_length": 131072,
+          "expiration_date": null,
+          "validation": {
+            "status": "static-checks",
+            "checked_at": "2026-09-29T21:45:46.237Z"
+          },
+          "selection": {
+            "reason": "Reference CHEAP_ROSTER incumbent, battle-tested in the game.",
+            "evidence": [
+              "reference CHEAP_ROSTER (slugs verified live)"
+            ]
+          }
+        },
+        "flagship": {
+          "status": "active",
+          "config_id": "fe863fed8e6f",
+          "model_id": "meta-llama/llama-4-maverick",
+          "canonical_slug": "meta-llama/llama-4-maverick-17b-128e-instruct",
+          "display_name": "Meta: Llama 4 Maverick",
+          "request_parameters": {
+            "temperature": 0.9
+          },
+          "provider_policy": {
+            "require_parameters": false,
+            "allow_fallbacks": true
+          },
+          "pricing": {
+            "currency": "USD",
+            "prompt_per_token": "0.0000001875",
+            "completion_per_token": "0.0000006525",
+            "basis": "catalog",
+            "checked_at": "2026-09-29T21:45:46.386Z"
+          },
+          "context_length": 1048576,
+          "expiration_date": null,
+          "validation": {
+            "status": "static-checks",
+            "checked_at": "2026-09-29T21:45:46.237Z"
+          },
+          "selection": {
+            "reason": "Largest Meta model on OpenRouter (Meta has published nothing newer there as of 2026-09).",
+            "evidence": [
+              "OpenRouter catalog 2026-09-29: newest meta-llama entry"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "brand_id": "deepseek",
+      "display_name": "DeepSeek",
+      "priority": 6,
+      "tracks": {
+        "economy": {
+          "status": "active",
+          "config_id": "2ea8953fb9bd",
+          "model_id": "deepseek/deepseek-v4-flash-0731",
+          "canonical_slug": "deepseek/deepseek-v4-flash-20260731",
+          "display_name": "DeepSeek: DeepSeek V4 Flash 0731",
+          "request_parameters": {
+            "temperature": 0.9,
+            "reasoning": {
+              "enabled": false
+            }
+          },
+          "provider_policy": {
+            "require_parameters": false,
+            "allow_fallbacks": true
+          },
+          "pricing": {
+            "currency": "USD",
+            "prompt_per_token": "0.000000018",
+            "completion_per_token": "0.00000032",
+            "basis": "catalog",
+            "checked_at": "2026-09-29T21:45:46.386Z"
+          },
+          "context_length": 1310720,
+          "expiration_date": null,
+          "validation": {
+            "status": "static-checks",
+            "checked_at": "2026-09-29T21:45:46.237Z"
+          },
+          "selection": {
+            "reason": "Cheapest blended game cost of any DeepSeek ($0.018/$0.32 per MTok); reference FRONTIER_ROSTER incumbent.",
+            "evidence": [
+              "reference FRONTIER_ROSTER (live-tested Aug 2026)",
+              "OpenRouter catalog 2026-09-29: reasoning.mandatory=false"
+            ]
+          }
+        },
+        "flagship": {
+          "status": "active",
+          "config_id": "1f8ae5a3ae96",
+          "model_id": "deepseek/deepseek-v4-pro",
+          "canonical_slug": "deepseek/deepseek-v4-pro-20260423",
+          "display_name": "DeepSeek: DeepSeek V4 Pro 0423",
+          "request_parameters": {
+            "temperature": 0.9,
+            "reasoning": {
+              "enabled": false
+            }
+          },
+          "provider_policy": {
+            "require_parameters": false,
+            "allow_fallbacks": true
+          },
+          "pricing": {
+            "currency": "USD",
+            "prompt_per_token": "0.000000915936",
+            "completion_per_token": "0.000001831872",
+            "basis": "catalog",
+            "checked_at": "2026-09-29T21:45:46.386Z"
+          },
+          "context_length": 1048576,
+          "expiration_date": null,
+          "validation": {
+            "status": "static-checks",
+            "checked_at": "2026-09-29T21:45:46.237Z"
+          },
+          "selection": {
+            "reason": "DeepSeek's top general model on OpenRouter; reasoning can be disabled.",
+            "evidence": [
+              "OpenRouter catalog 2026-09-29: reasoning.mandatory=false"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "brand_id": "qwen",
+      "display_name": "Alibaba / Qwen",
+      "priority": 7,
+      "tracks": {
+        "economy": {
+          "status": "active",
+          "config_id": "316fb16d7d7f",
+          "model_id": "qwen/qwen3.7-flash",
+          "canonical_slug": "qwen/qwen3.7-flash-20260727",
+          "display_name": "Qwen: Qwen3.7 Flash",
+          "request_parameters": {
+            "temperature": 0.9,
+            "reasoning": {
+              "enabled": false
+            }
+          },
+          "provider_policy": {
+            "require_parameters": false,
+            "allow_fallbacks": true
+          },
+          "pricing": {
+            "currency": "USD",
+            "prompt_per_token": "0.00000003",
+            "completion_per_token": "0.00000013",
+            "basis": "catalog",
+            "checked_at": "2026-09-29T21:45:46.386Z"
+          },
+          "context_length": 1000000,
+          "expiration_date": null,
+          "validation": {
+            "status": "static-checks",
+            "checked_at": "2026-09-29T21:45:46.237Z"
+          },
+          "selection": {
+            "reason": "Cheapest capable Qwen ($0.03/$0.13 per MTok); reference FRONTIER_ROSTER incumbent.",
+            "evidence": [
+              "reference FRONTIER_ROSTER (live-tested Aug 2026)",
+              "OpenRouter catalog 2026-09-29: reasoning.mandatory=false"
+            ]
+          }
+        },
+        "flagship": {
+          "status": "active",
+          "config_id": "4d8dc01c5bce",
+          "model_id": "qwen/qwen3.7-max",
+          "canonical_slug": "qwen/qwen3.7-max-20260520",
+          "display_name": "Qwen: Qwen3.7 Max",
+          "request_parameters": {
+            "temperature": 0.9,
+            "reasoning": {
+              "enabled": false
+            }
+          },
+          "provider_policy": {
+            "require_parameters": false,
+            "allow_fallbacks": true
+          },
+          "pricing": {
+            "currency": "USD",
+            "prompt_per_token": "0.000001475",
+            "completion_per_token": "0.000004425",
+            "basis": "catalog",
+            "checked_at": "2026-09-29T21:45:46.386Z"
+          },
+          "context_length": 1000000,
+          "expiration_date": null,
+          "validation": {
+            "status": "static-checks",
+            "checked_at": "2026-09-29T21:45:46.237Z"
+          },
+          "selection": {
+            "reason": "Strongest Qwen that honors reasoning-off (qwen3.8-max-0902 and qwen3.8-max-prime are reasoning-mandatory).",
+            "evidence": [
+              "OpenRouter catalog 2026-09-29: reasoning.mandatory=false"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "brand_id": "moonshot",
+      "display_name": "Moonshot / Kimi",
+      "priority": 8,
+      "tracks": {
+        "economy": {
+          "status": "active",
+          "config_id": "b01cd48c917a",
+          "model_id": "moonshotai/kimi-k2.5",
+          "canonical_slug": "moonshotai/kimi-k2.5-0127",
+          "display_name": "MoonshotAI: Kimi K2.5",
+          "request_parameters": {
+            "temperature": 0.9,
+            "reasoning": {
+              "enabled": false
+            }
+          },
+          "provider_policy": {
+            "require_parameters": false,
+            "allow_fallbacks": true
+          },
+          "pricing": {
+            "currency": "USD",
+            "prompt_per_token": "0.00000045",
+            "completion_per_token": "0.00000225",
+            "basis": "catalog",
+            "checked_at": "2026-09-29T21:45:46.386Z"
+          },
+          "context_length": 262144,
+          "expiration_date": null,
+          "validation": {
+            "status": "static-checks",
+            "checked_at": "2026-09-29T21:45:46.237Z"
+          },
+          "selection": {
+            "reason": "Cheapest blended game cost of any Kimi ($0.45/$2.25 per MTok), newer than the reference's kimi-k2-0905.",
+            "evidence": [
+              "OpenRouter catalog 2026-09-29: reasoning.mandatory=false"
+            ]
+          }
+        },
+        "flagship": {
+          "status": "active",
+          "config_id": "8446b22ee5a8",
+          "model_id": "moonshotai/kimi-k3",
+          "canonical_slug": "moonshotai/kimi-k3-20260715",
+          "display_name": "MoonshotAI: Kimi K3",
+          "request_parameters": {
+            "temperature": 0.9,
+            "reasoning": {
+              "enabled": false
+            }
+          },
+          "provider_policy": {
+            "require_parameters": false,
+            "allow_fallbacks": true
+          },
+          "pricing": {
+            "currency": "USD",
+            "prompt_per_token": "0.000003",
+            "completion_per_token": "0.000015",
+            "basis": "catalog",
+            "checked_at": "2026-09-29T21:45:46.386Z"
+          },
+          "context_length": 1048576,
+          "expiration_date": null,
+          "validation": {
+            "status": "static-checks",
+            "checked_at": "2026-09-29T21:45:46.237Z"
+          },
+          "selection": {
+            "reason": "Moonshot's flagship; reference FRONTIER_ROSTER incumbent; reasoning can be disabled.",
+            "evidence": [
+              "reference FRONTIER_ROSTER (live-tested Aug 2026)",
+              "OpenRouter catalog 2026-09-29: reasoning.mandatory=false"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "brand_id": "zai",
+      "display_name": "Z AI / GLM",
+      "priority": 9,
+      "tracks": {
+        "economy": {
+          "status": "active",
+          "config_id": "451937f252fc",
+          "model_id": "z-ai/glm-4.7-flash",
+          "canonical_slug": "z-ai/glm-4.7-flash-20260119",
+          "display_name": "Z.ai: GLM 4.7 Flash",
+          "request_parameters": {
+            "temperature": 0.9,
+            "reasoning": {
+              "enabled": false
+            }
+          },
+          "provider_policy": {
+            "require_parameters": false,
+            "allow_fallbacks": true
+          },
+          "pricing": {
+            "currency": "USD",
+            "prompt_per_token": "0.0000000605",
+            "completion_per_token": "0.0000004",
+            "basis": "catalog",
+            "checked_at": "2026-09-29T21:45:46.386Z"
+          },
+          "context_length": 200000,
+          "expiration_date": null,
+          "validation": {
+            "status": "static-checks",
+            "checked_at": "2026-09-29T21:45:46.237Z"
+          },
+          "selection": {
+            "reason": "Cheapest eligible GLM ($0.061/$0.40 per MTok). glm-5.3-flash is newer but reasoning-mandatory and ineligible.",
+            "evidence": [
+              "OpenRouter catalog 2026-09-29: reasoning.mandatory=false"
+            ]
+          }
+        },
+        "flagship": {
+          "status": "active",
+          "config_id": "26f13a8cf05c",
+          "model_id": "z-ai/glm-5",
+          "canonical_slug": "z-ai/glm-5-20260211",
+          "display_name": "Z.ai: GLM 5",
+          "request_parameters": {
+            "temperature": 0.9,
+            "reasoning": {
+              "enabled": false
+            }
+          },
+          "provider_policy": {
+            "require_parameters": false,
+            "allow_fallbacks": true
+          },
+          "pricing": {
+            "currency": "USD",
+            "prompt_per_token": "0.0000006",
+            "completion_per_token": "0.00000192",
+            "basis": "catalog",
+            "checked_at": "2026-09-29T21:45:46.386Z"
+          },
+          "context_length": 204800,
+          "expiration_date": null,
+          "validation": {
+            "status": "static-checks",
+            "checked_at": "2026-09-29T21:45:46.237Z"
+          },
+          "selection": {
+            "reason": "Strongest GLM with documented game evidence that honors reasoning-off. glm-5.3 and glm-5.3-prime are reasoning-mandatory; glm-5.2 is a candidate pending evaluation.",
+            "evidence": [
+              "reference FRONTIER_ROSTER (live-tested Aug 2026)",
+              "OpenRouter catalog 2026-09-29: reasoning.mandatory=false"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "brand_id": "mistral",
+      "display_name": "Mistral",
+      "priority": 10,
+      "tracks": {
+        "economy": {
+          "status": "active",
+          "config_id": "94dc6a4bb324",
+          "model_id": "mistralai/ministral-8b-2512",
+          "canonical_slug": "mistralai/ministral-8b-2512",
+          "display_name": "Mistral: Ministral 3 8B 2512",
+          "request_parameters": {
+            "temperature": 0.9
+          },
+          "provider_policy": {
+            "require_parameters": false,
+            "allow_fallbacks": true
+          },
+          "pricing": {
+            "currency": "USD",
+            "prompt_per_token": "0.00000015",
+            "completion_per_token": "0.00000015",
+            "basis": "catalog",
+            "checked_at": "2026-09-29T21:45:46.386Z"
+          },
+          "context_length": 262144,
+          "expiration_date": null,
+          "validation": {
+            "status": "static-checks",
+            "checked_at": "2026-09-29T21:45:46.237Z"
+          },
+          "selection": {
+            "reason": "Reference CHEAP_ROSTER incumbent, battle-tested in the game.",
+            "evidence": [
+              "reference CHEAP_ROSTER (slugs verified live)"
+            ]
+          }
+        },
+        "flagship": {
+          "status": "active",
+          "config_id": "b9f3ce09c64b",
+          "model_id": "mistralai/mistral-medium-3-5",
+          "canonical_slug": "mistralai/mistral-medium-3.5-20260430",
+          "display_name": "Mistral: Mistral Medium 3.5",
+          "request_parameters": {
+            "temperature": 0.9,
+            "reasoning": {
+              "enabled": false
+            }
+          },
+          "provider_policy": {
+            "require_parameters": false,
+            "allow_fallbacks": true
+          },
+          "pricing": {
+            "currency": "USD",
+            "prompt_per_token": "0.0000015",
+            "completion_per_token": "0.0000075",
+            "basis": "catalog",
+            "checked_at": "2026-09-29T21:45:46.386Z"
+          },
+          "context_length": 262144,
+          "expiration_date": null,
+          "validation": {
+            "status": "static-checks",
+            "checked_at": "2026-09-29T21:45:46.237Z"
+          },
+          "selection": {
+            "reason": "Mistral's premium-priced current tier ($1.50/$7.50 per MTok, above mistral-large-2512), supports reasoning 'none'. mistral-large-2512 is the fallback candidate.",
+            "evidence": [
+              "OpenRouter catalog 2026-09-29: priced above every other mistralai entry, reasoning.mandatory=false"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

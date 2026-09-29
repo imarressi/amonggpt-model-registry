@@ -1,0 +1,24 @@
+{
+  "game_contract": {
+    "min_context_length": 16384,
+    "min_completion_tokens": 140,
+    "required_parameters": ["max_tokens"]
+  },
+  "exclusions": {
+    "id_suffixes": [":free", ":batch"],
+    "id_substrings": ["openrouter/auto"]
+  },
+  "expiry_horizon_days": 14,
+  "price_ceilings_per_mtok": {
+    "economy": { "prompt": 1.5, "completion": 6.0 },
+    "flagship": { "prompt": 12.0, "completion": 60.0 }
+  },
+  "cost_model": {
+    "prompt_tokens_per_call": 1500,
+    "completion_tokens_per_call": 130
+  },
+  "catalog_min_models": 200,
+  "catalog_max_shrink_ratio": 0.5,
+  "price_change_alert_pct": 25,
+  "freshness": { "warn_hours": 36, "block_hours": 72 }
+}

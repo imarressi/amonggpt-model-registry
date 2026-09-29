@@ -1,0 +1,175 @@
+{
+  "generated_at": "2026-09-29T21:45:46.237Z",
+  "candidates": [
+    {
+      "brand_id": "openai",
+      "model_id": "openai/gpt-5-nano",
+      "prompt_per_mtok": 0.049999999999999996,
+      "completion_per_mtok": 0.39999999999999997,
+      "est_cost_per_call_usd": 0.000127,
+      "vs_economy_pct": -41,
+      "context_length": 400000,
+      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
+    },
+    {
+      "brand_id": "openai",
+      "model_id": "openai/gpt-4.1-nano",
+      "prompt_per_mtok": 0.09999999999999999,
+      "completion_per_mtok": 0.39999999999999997,
+      "est_cost_per_call_usd": 0.00020199999999999998,
+      "vs_economy_pct": -6,
+      "context_length": 1047576,
+      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
+    },
+    {
+      "brand_id": "google",
+      "model_id": "google/gemma-3-4b-it",
+      "prompt_per_mtok": 0.049999999999999996,
+      "completion_per_mtok": 0.09999999999999999,
+      "est_cost_per_call_usd": 0.000088,
+      "vs_economy_pct": -85,
+      "context_length": 131072,
+      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
+    },
+    {
+      "brand_id": "google",
+      "model_id": "google/gemma-3-12b-it",
+      "prompt_per_mtok": 0.049999999999999996,
+      "completion_per_mtok": 0.15,
+      "est_cost_per_call_usd": 0.00009449999999999999,
+      "vs_economy_pct": -83,
+      "context_length": 131072,
+      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
+    },
+    {
+      "brand_id": "google",
+      "model_id": "google/gemma-4-26b-a4b-it",
+      "prompt_per_mtok": 0.0765,
+      "completion_per_mtok": 0.255,
+      "est_cost_per_call_usd": 0.00014790000000000002,
+      "vs_economy_pct": -74,
+      "context_length": 262144,
+      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
+    },
+    {
+      "brand_id": "google",
+      "model_id": "google/gemma-3-27b-it",
+      "prompt_per_mtok": 0.08,
+      "completion_per_mtok": 0.44999999999999996,
+      "est_cost_per_call_usd": 0.0001785,
+      "vs_economy_pct": -69,
+      "context_length": 131072,
+      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
+    },
+    {
+      "brand_id": "google",
+      "model_id": "google/gemma-4-31b-it",
+      "prompt_per_mtok": 0.09,
+      "completion_per_mtok": 0.33999999999999997,
+      "est_cost_per_call_usd": 0.0001792,
+      "vs_economy_pct": -69,
+      "context_length": 262144,
+      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
+    },
+    {
+      "brand_id": "google",
+      "model_id": "google/gemini-2.5-flash-lite",
+      "prompt_per_mtok": 0.09999999999999999,
+      "completion_per_mtok": 0.39999999999999997,
+      "est_cost_per_call_usd": 0.00020199999999999998,
+      "vs_economy_pct": -65,
+      "context_length": 1048576,
+      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
+    },
+    {
+      "brand_id": "meta",
+      "model_id": "meta-llama/llama-3.2-1b-instruct",
+      "prompt_per_mtok": 0.027,
+      "completion_per_mtok": 0.201,
+      "est_cost_per_call_usd": 0.00006663,
+      "vs_economy_pct": -65,
+      "context_length": 60000,
+      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
+    },
+    {
+      "brand_id": "meta",
+      "model_id": "meta-llama/llama-3.1-8b-instruct",
+      "prompt_per_mtok": 0.049999999999999996,
+      "completion_per_mtok": 0.08,
+      "est_cost_per_call_usd": 0.00008539999999999999,
+      "vs_economy_pct": -55,
+      "context_length": 131072,
+      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
+    },
+    {
+      "brand_id": "meta",
+      "model_id": "meta-llama/llama-3.2-3b-instruct",
+      "prompt_per_mtok": 0.049999999999999996,
+      "completion_per_mtok": 0.33,
+      "est_cost_per_call_usd": 0.00011789999999999999,
+      "vs_economy_pct": -38,
+      "context_length": 131072,
+      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
+    },
+    {
+      "brand_id": "meta",
+      "model_id": "meta-llama/llama-4-scout",
+      "prompt_per_mtok": 0.09999999999999999,
+      "completion_per_mtok": 0.3,
+      "est_cost_per_call_usd": 0.00018899999999999999,
+      "vs_economy_pct": -1,
+      "context_length": 1310720,
+      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
+    },
+    {
+      "brand_id": "mistral",
+      "model_id": "mistralai/mistral-nemo",
+      "prompt_per_mtok": 0.019000000000000003,
+      "completion_per_mtok": 0.03,
+      "est_cost_per_call_usd": 0.0000324,
+      "vs_economy_pct": -87,
+      "context_length": 131072,
+      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
+    },
+    {
+      "brand_id": "mistral",
+      "model_id": "mistralai/mistral-small-24b-instruct-2501",
+      "prompt_per_mtok": 0.049999999999999996,
+      "completion_per_mtok": 0.08,
+      "est_cost_per_call_usd": 0.00008539999999999999,
+      "vs_economy_pct": -65,
+      "context_length": 32768,
+      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
+    },
+    {
+      "brand_id": "mistral",
+      "model_id": "mistralai/ministral-3b-2512",
+      "prompt_per_mtok": 0.09999999999999999,
+      "completion_per_mtok": 0.09999999999999999,
+      "est_cost_per_call_usd": 0.00016299999999999998,
+      "vs_economy_pct": -33,
+      "context_length": 131072,
+      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
+    },
+    {
+      "brand_id": "mistral",
+      "model_id": "mistralai/mistral-small-3.2-24b-instruct",
+      "prompt_per_mtok": 0.09375,
+      "completion_per_mtok": 0.25,
+      "est_cost_per_call_usd": 0.00017312500000000002,
+      "vs_economy_pct": -29,
+      "context_length": 256000,
+      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
+    },
+    {
+      "brand_id": "mistral",
+      "model_id": "mistralai/voxtral-small-24b-2507",
+      "prompt_per_mtok": 0.09999999999999999,
+      "completion_per_mtok": 0.3,
+      "est_cost_per_call_usd": 0.00018899999999999999,
+      "vs_economy_pct": -23,
+      "context_length": 32768,
+      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
+    }
+  ]
+}

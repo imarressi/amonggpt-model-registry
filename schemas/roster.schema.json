@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/imarressi/amonggpt-model-registry/schemas/roster.schema.json",
+  "title": "AmongGPT model roster",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "registry_version",
+    "generated_at",
+    "catalog_checked_at",
+    "catalog_model_count",
+    "default_track",
+    "api",
+    "brands"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": 1 },
+    "registry_version": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}-[0-9a-f]{7}$" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "catalog_checked_at": { "type": "string", "format": "date-time" },
+    "catalog_model_count": { "type": "integer", "minimum": 1 },
+    "default_track": { "enum": ["economy", "flagship"] },
+    "api": {
+      "type": "object",
+      "required": ["provider", "base_url", "chat_path"],
+      "additionalProperties": false,
+      "properties": {
+        "provider": { "const": "openrouter" },
+        "base_url": { "const": "https://openrouter.ai/api/v1" },
+        "chat_path": { "const": "/chat/completions" }
+      }
+    },
+    "brands": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": { "$ref": "#/$defs/brand" }
+    }
+  },
+  "$defs": {
+    "brand": {
+      "type": "object",
+      "required": ["brand_id", "display_name", "priority", "tracks"],
+      "additionalProperties": false,
+      "properties": {
+        "brand_id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+        "display_name": { "type": "string", "minLength": 1 },
+        "priority": { "type": "integer", "minimum": 1, "maximum": 10 },
+        "tracks": {
+          "type": "object",
+          "required": ["economy", "flagship"],
+          "additionalProperties": false,
+          "properties": {
+            "economy": { "$ref": "#/$defs/trackEntry" },
+            "flagship": { "$ref": "#/$defs/trackEntry" }
+          }
+        }
+      }
+    },
+    "trackEntry": {
+      "oneOf": [{ "$ref": "#/$defs/activeEntry" }, { "$ref": "#/$defs/inactiveEntry" }]
+    },
+    "activeEntry": {
+      "type": "object",
+      "required": [
+        "status",
+        "config_id",
+        "model_id",
+        "request_parameters",
+        "provider_policy",
+        "pricing",
+        "context_length",
+        "expiration_date",
+        "validation",
+        "selection"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "status": { "const": "active" },
+        "config_id": { "type": "string", "pattern": "^[0-9a-f]{12}$" },
+        "model_id": { "type": "string", "pattern": "^[a-z0-9-]+/[A-Za-z0-9._-]+$" },
+        "canonical_slug": { "type": ["string", "null"] },
+        "display_name": { "type": ["string", "null"] },
+        "request_parameters": { "type": "object" },
+        "provider_policy": { "type": "object" },
+        "pricing": {
+          "type": "object",
+          "required": ["currency", "prompt_per_token", "completion_per_token", "basis", "checked_at"],
+          "additionalProperties": false,
+          "properties": {
+            "currency": { "const": "USD" },
+            "prompt_per_token": { "type": ["string", "null"], "pattern": "^[0-9.eE+-]+$" },
+            "completion_per_token": { "type": ["string", "null"], "pattern": "^[0-9.eE+-]+$" },
+            "basis": { "const": "catalog" },
+            "checked_at": { "type": "string", "format": "date-time" }
+          }
+        },
+        "context_length": { "type": ["integer", "null"], "minimum": 0 },
+        "expiration_date": { "type": ["string", "null"] },
+        "validation": {
+          "type": "object",
+          "required": ["status", "checked_at"],
+          "additionalProperties": false,
+          "properties": {
+            "status": { "const": "static-checks" },
+            "checked_at": { "type": "string", "format": "date-time" }
+          }
+        },
+        "selection": {
+          "type": "object",
+          "required": ["reason", "evidence"],
+          "additionalProperties": false,
+          "properties": {
+            "reason": { "type": "string", "minLength": 1 },
+            "evidence": { "type": "array", "items": { "type": "string" } }
+          }
+        }
+      }
+    },
+    "inactiveEntry": {
+      "type": "object",
+      "required": ["status", "reason"],
+      "additionalProperties": false,
+      "properties": {
+        "status": { "enum": ["suspended", "unavailable"] },
+        "reason": { "type": "string", "minLength": 1 },
+        "model_id": { "type": "string" },
+        "config_id": { "type": "string", "pattern": "^[0-9a-f]{12}$" }
+      }
+    }
+  }
+}
