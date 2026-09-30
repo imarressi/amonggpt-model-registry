@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T21:47:17.065Z",
+  "generated_at": "2026-09-30T14:54:34.522Z",
   "candidates": [
     {
       "brand_id": "openai",
@@ -44,10 +44,10 @@
     {
       "brand_id": "google",
       "model_id": "google/gemma-4-26b-a4b-it",
-      "prompt_per_mtok": 0.0765,
-      "completion_per_mtok": 0.255,
-      "est_cost_per_call_usd": 0.00014790000000000002,
-      "vs_economy_pct": -74,
+      "prompt_per_mtok": 0.09,
+      "completion_per_mtok": 0.3,
+      "est_cost_per_call_usd": 0.000174,
+      "vs_economy_pct": -69,
       "context_length": 262144,
       "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
     },
@@ -119,6 +119,26 @@
       "est_cost_per_call_usd": 0.00018899999999999999,
       "vs_economy_pct": -1,
       "context_length": 1310720,
+      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
+    },
+    {
+      "brand_id": "deepseek",
+      "model_id": "deepseek/deepseek-v4.1-flash",
+      "prompt_per_mtok": 0.019799999999999998,
+      "completion_per_mtok": 0.396,
+      "est_cost_per_call_usd": 0.00008118,
+      "vs_economy_pct": -55,
+      "context_length": 1048576,
+      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
+    },
+    {
+      "brand_id": "deepseek",
+      "model_id": "deepseek/deepseek-v4-flash",
+      "prompt_per_mtok": 0.07854,
+      "completion_per_mtok": 0.15708,
+      "est_cost_per_call_usd": 0.0001382304,
+      "vs_economy_pct": -24,
+      "context_length": 1048576,
       "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
     },
     {
