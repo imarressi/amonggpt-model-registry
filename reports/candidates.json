@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T14:54:34.522Z",
+  "generated_at": "2026-10-01T15:26:29.101Z",
   "candidates": [
     {
       "brand_id": "openai",
@@ -123,22 +123,32 @@
     },
     {
       "brand_id": "deepseek",
-      "model_id": "deepseek/deepseek-v4.1-flash",
-      "prompt_per_mtok": 0.019799999999999998,
-      "completion_per_mtok": 0.396,
-      "est_cost_per_call_usd": 0.00008118,
-      "vs_economy_pct": -55,
+      "model_id": "deepseek/deepseek-v4-flash",
+      "prompt_per_mtok": 0.04186,
+      "completion_per_mtok": 0.08372,
+      "est_cost_per_call_usd": 0.0000736736,
+      "vs_economy_pct": -60,
       "context_length": 1048576,
       "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
     },
     {
       "brand_id": "deepseek",
-      "model_id": "deepseek/deepseek-v4-flash",
-      "prompt_per_mtok": 0.07854,
-      "completion_per_mtok": 0.15708,
-      "est_cost_per_call_usd": 0.0001382304,
-      "vs_economy_pct": -24,
+      "model_id": "deepseek/deepseek-v4.1-flash",
+      "prompt_per_mtok": 0.03,
+      "completion_per_mtok": 0.5,
+      "est_cost_per_call_usd": 0.00010999999999999999,
+      "vs_economy_pct": -40,
       "context_length": 1048576,
+      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
+    },
+    {
+      "brand_id": "moonshot",
+      "model_id": "moonshotai/kimi-k2.6",
+      "prompt_per_mtok": 0.43415,
+      "completion_per_mtok": 1.8279999999999998,
+      "est_cost_per_call_usd": 0.000888865,
+      "vs_economy_pct": -8,
+      "context_length": 262144,
       "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
     },
     {

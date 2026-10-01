@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "registry_version": "2026-09-30-bd2d0c3",
-  "generated_at": "2026-09-30T14:54:34.522Z",
-  "catalog_checked_at": "2026-09-30T14:54:34.650Z",
-  "catalog_model_count": 464,
+  "registry_version": "2026-10-01-2675a77",
+  "generated_at": "2026-10-01T15:26:29.101Z",
+  "catalog_checked_at": "2026-10-01T15:26:29.294Z",
+  "catalog_model_count": 463,
   "default_track": "economy",
   "api": {
     "provider": "openrouter",
@@ -36,13 +36,13 @@
             "prompt_per_token": "0.0000001",
             "completion_per_token": "0.0000005",
             "basis": "catalog",
-            "checked_at": "2026-09-30T14:54:34.650Z"
+            "checked_at": "2026-10-01T15:26:29.294Z"
           },
           "context_length": 1050000,
           "expiration_date": null,
           "validation": {
             "status": "static-checks",
-            "checked_at": "2026-09-30T14:54:34.522Z"
+            "checked_at": "2026-10-01T15:26:29.101Z"
           },
           "selection": {
             "reason": "Cheapest current-generation OpenAI chat tier ($0.10/$0.50 per MTok) that can disable reasoning (supports effort 'none'). gpt-5-nano is cheaper but reasoning-mandatory.",
@@ -71,13 +71,13 @@
             "prompt_per_token": "0.000002",
             "completion_per_token": "0.00001",
             "basis": "catalog",
-            "checked_at": "2026-09-30T14:54:34.650Z"
+            "checked_at": "2026-10-01T15:26:29.294Z"
           },
           "context_length": 1050000,
           "expiration_date": null,
           "validation": {
             "status": "static-checks",
-            "checked_at": "2026-09-30T14:54:34.522Z"
+            "checked_at": "2026-10-01T15:26:29.101Z"
           },
           "selection": {
             "reason": "Strongest OpenAI model that honors reasoning-off (gpt-6-astra and gpt-5.x pro tiers are reasoning-mandatory or reasoning-priced).",
@@ -114,13 +114,13 @@
             "prompt_per_token": "0.000001",
             "completion_per_token": "0.000005",
             "basis": "catalog",
-            "checked_at": "2026-09-30T14:54:34.650Z"
+            "checked_at": "2026-10-01T15:26:29.294Z"
           },
           "context_length": 200000,
           "expiration_date": null,
           "validation": {
             "status": "static-checks",
-            "checked_at": "2026-09-30T14:54:34.522Z"
+            "checked_at": "2026-10-01T15:26:29.101Z"
           },
           "selection": {
             "reason": "Reference CHEAP_ROSTER incumbent, battle-tested in the game.",
@@ -151,13 +151,13 @@
             "prompt_per_token": "0.000005",
             "completion_per_token": "0.000025",
             "basis": "catalog",
-            "checked_at": "2026-09-30T14:54:34.650Z"
+            "checked_at": "2026-10-01T15:26:29.294Z"
           },
           "context_length": 1000000,
           "expiration_date": null,
           "validation": {
             "status": "static-checks",
-            "checked_at": "2026-09-30T14:54:34.522Z"
+            "checked_at": "2026-10-01T15:26:29.101Z"
           },
           "selection": {
             "reason": "Strongest Anthropic model that honors reasoning-off. claude-opus-5.5, claude-sonnet-5.5 and claude-fable-5.x are reasoning-mandatory and ineligible under the game contract.",
@@ -195,13 +195,13 @@
             "prompt_per_token": "0.00000025",
             "completion_per_token": "0.0000015",
             "basis": "catalog",
-            "checked_at": "2026-09-30T14:54:34.650Z"
+            "checked_at": "2026-10-01T15:26:29.294Z"
           },
           "context_length": 1048576,
           "expiration_date": null,
           "validation": {
             "status": "static-checks",
-            "checked_at": "2026-09-30T14:54:34.522Z"
+            "checked_at": "2026-10-01T15:26:29.101Z"
           },
           "selection": {
             "reason": "Reference CHEAP_ROSTER incumbent. Google models only accept effort 'minimal' as the off-position — the harness already special-cases this.",
@@ -232,13 +232,13 @@
             "prompt_per_token": "0.00000075",
             "completion_per_token": "0.00000375",
             "basis": "catalog",
-            "checked_at": "2026-09-30T14:54:34.650Z"
+            "checked_at": "2026-10-01T15:26:29.294Z"
           },
           "context_length": 1048576,
           "expiration_date": null,
           "validation": {
             "status": "static-checks",
-            "checked_at": "2026-09-30T14:54:34.522Z"
+            "checked_at": "2026-10-01T15:26:29.101Z"
           },
           "selection": {
             "reason": "Newest Gemini that still supports effort 'minimal' (3.7-flash and 3.8-flash floor at 'low', which burns reasoning tokens against the 110-token game budget). No stable non-preview Gemini Pro exists on OpenRouter; gemini-2.5-pro expires 2026-10-20.",
@@ -276,13 +276,13 @@
             "prompt_per_token": "0.00000125",
             "completion_per_token": "0.0000025",
             "basis": "catalog",
-            "checked_at": "2026-09-30T14:54:34.650Z"
+            "checked_at": "2026-10-01T15:26:29.294Z"
           },
           "context_length": 1000000,
           "expiration_date": null,
           "validation": {
             "status": "static-checks",
-            "checked_at": "2026-09-30T14:54:34.522Z"
+            "checked_at": "2026-10-01T15:26:29.101Z"
           },
           "selection": {
             "reason": "Cheapest xAI model ($1.25/$2.50 per MTok, tied with grok-4.20 but newer) that supports reasoning 'none'.",
@@ -312,13 +312,13 @@
             "prompt_per_token": "0.00000125",
             "completion_per_token": "0.0000025",
             "basis": "catalog",
-            "checked_at": "2026-09-30T14:54:34.650Z"
+            "checked_at": "2026-10-01T15:26:29.294Z"
           },
           "context_length": 1000000,
           "expiration_date": null,
           "validation": {
             "status": "static-checks",
-            "checked_at": "2026-09-30T14:54:34.522Z"
+            "checked_at": "2026-10-01T15:26:29.101Z"
           },
           "selection": {
             "reason": "Same model on both tracks: every newer Grok (4.5, 4.6, 4.7) is reasoning-mandatory and ineligible under the game contract.",
@@ -352,13 +352,13 @@
             "prompt_per_token": "0.0000001",
             "completion_per_token": "0.00000032",
             "basis": "catalog",
-            "checked_at": "2026-09-30T14:54:34.650Z"
+            "checked_at": "2026-10-01T15:26:29.294Z"
           },
           "context_length": 131072,
           "expiration_date": null,
           "validation": {
             "status": "static-checks",
-            "checked_at": "2026-09-30T14:54:34.522Z"
+            "checked_at": "2026-10-01T15:26:29.101Z"
           },
           "selection": {
             "reason": "Reference CHEAP_ROSTER incumbent, battle-tested in the game.",
@@ -385,13 +385,13 @@
             "prompt_per_token": "0.0000001875",
             "completion_per_token": "0.0000006525",
             "basis": "catalog",
-            "checked_at": "2026-09-30T14:54:34.650Z"
+            "checked_at": "2026-10-01T15:26:29.294Z"
           },
           "context_length": 1048576,
           "expiration_date": null,
           "validation": {
             "status": "static-checks",
-            "checked_at": "2026-09-30T14:54:34.522Z"
+            "checked_at": "2026-10-01T15:26:29.101Z"
           },
           "selection": {
             "reason": "Largest Meta model on OpenRouter (Meta has published nothing newer there as of 2026-09).",
@@ -425,16 +425,16 @@
           },
           "pricing": {
             "currency": "USD",
-            "prompt_per_token": "0.00000001",
+            "prompt_per_token": "0.0000000108",
             "completion_per_token": "0.00000128",
             "basis": "catalog",
-            "checked_at": "2026-09-30T14:54:34.650Z"
+            "checked_at": "2026-10-01T15:26:29.294Z"
           },
           "context_length": 1048576,
           "expiration_date": null,
           "validation": {
             "status": "static-checks",
-            "checked_at": "2026-09-30T14:54:34.522Z"
+            "checked_at": "2026-10-01T15:26:29.101Z"
           },
           "selection": {
             "reason": "Cheapest blended game cost of any DeepSeek ($0.018/$0.32 per MTok); reference FRONTIER_ROSTER incumbent.",
@@ -462,16 +462,16 @@
           },
           "pricing": {
             "currency": "USD",
-            "prompt_per_token": "0.000000783",
-            "completion_per_token": "0.000001566",
+            "prompt_per_token": "0.0000002088",
+            "completion_per_token": "0.0000004176",
             "basis": "catalog",
-            "checked_at": "2026-09-30T14:54:34.650Z"
+            "checked_at": "2026-10-01T15:26:29.294Z"
           },
           "context_length": 1048576,
           "expiration_date": null,
           "validation": {
             "status": "static-checks",
-            "checked_at": "2026-09-30T14:54:34.522Z"
+            "checked_at": "2026-10-01T15:26:29.101Z"
           },
           "selection": {
             "reason": "DeepSeek's top general model on OpenRouter; reasoning can be disabled.",
@@ -508,13 +508,13 @@
             "prompt_per_token": "0.00000003",
             "completion_per_token": "0.00000013",
             "basis": "catalog",
-            "checked_at": "2026-09-30T14:54:34.650Z"
+            "checked_at": "2026-10-01T15:26:29.294Z"
           },
           "context_length": 1000000,
           "expiration_date": null,
           "validation": {
             "status": "static-checks",
-            "checked_at": "2026-09-30T14:54:34.522Z"
+            "checked_at": "2026-10-01T15:26:29.101Z"
           },
           "selection": {
             "reason": "Cheapest capable Qwen ($0.03/$0.13 per MTok); reference FRONTIER_ROSTER incumbent.",
@@ -545,13 +545,13 @@
             "prompt_per_token": "0.000001475",
             "completion_per_token": "0.000004425",
             "basis": "catalog",
-            "checked_at": "2026-09-30T14:54:34.650Z"
+            "checked_at": "2026-10-01T15:26:29.294Z"
           },
           "context_length": 1000000,
           "expiration_date": null,
           "validation": {
             "status": "static-checks",
-            "checked_at": "2026-09-30T14:54:34.522Z"
+            "checked_at": "2026-10-01T15:26:29.101Z"
           },
           "selection": {
             "reason": "Strongest Qwen that honors reasoning-off (qwen3.8-max-0902 and qwen3.8-max-prime are reasoning-mandatory).",
@@ -588,13 +588,13 @@
             "prompt_per_token": "0.00000045",
             "completion_per_token": "0.00000225",
             "basis": "catalog",
-            "checked_at": "2026-09-30T14:54:34.650Z"
+            "checked_at": "2026-10-01T15:26:29.294Z"
           },
           "context_length": 262144,
           "expiration_date": null,
           "validation": {
             "status": "static-checks",
-            "checked_at": "2026-09-30T14:54:34.522Z"
+            "checked_at": "2026-10-01T15:26:29.101Z"
           },
           "selection": {
             "reason": "Cheapest blended game cost of any Kimi ($0.45/$2.25 per MTok), newer than the reference's kimi-k2-0905.",
@@ -621,16 +621,16 @@
           },
           "pricing": {
             "currency": "USD",
-            "prompt_per_token": "0.000003",
-            "completion_per_token": "0.000015",
+            "prompt_per_token": "0.0000006572",
+            "completion_per_token": "0.00001",
             "basis": "catalog",
-            "checked_at": "2026-09-30T14:54:34.650Z"
+            "checked_at": "2026-10-01T15:26:29.294Z"
           },
           "context_length": 1048576,
           "expiration_date": null,
           "validation": {
             "status": "static-checks",
-            "checked_at": "2026-09-30T14:54:34.522Z"
+            "checked_at": "2026-10-01T15:26:29.101Z"
           },
           "selection": {
             "reason": "Moonshot's flagship; reference FRONTIER_ROSTER incumbent; reasoning can be disabled.",
@@ -668,13 +668,13 @@
             "prompt_per_token": "0.0000000605",
             "completion_per_token": "0.0000004",
             "basis": "catalog",
-            "checked_at": "2026-09-30T14:54:34.650Z"
+            "checked_at": "2026-10-01T15:26:29.294Z"
           },
           "context_length": 200000,
           "expiration_date": null,
           "validation": {
             "status": "static-checks",
-            "checked_at": "2026-09-30T14:54:34.522Z"
+            "checked_at": "2026-10-01T15:26:29.101Z"
           },
           "selection": {
             "reason": "Cheapest eligible GLM ($0.061/$0.40 per MTok). glm-5.3-flash is newer but reasoning-mandatory and ineligible.",
@@ -704,13 +704,13 @@
             "prompt_per_token": "0.0000006",
             "completion_per_token": "0.00000192",
             "basis": "catalog",
-            "checked_at": "2026-09-30T14:54:34.650Z"
+            "checked_at": "2026-10-01T15:26:29.294Z"
           },
           "context_length": 204800,
           "expiration_date": null,
           "validation": {
             "status": "static-checks",
-            "checked_at": "2026-09-30T14:54:34.522Z"
+            "checked_at": "2026-10-01T15:26:29.101Z"
           },
           "selection": {
             "reason": "Strongest GLM with documented game evidence that honors reasoning-off. glm-5.3 and glm-5.3-prime are reasoning-mandatory; glm-5.2 is a candidate pending evaluation.",
@@ -745,13 +745,13 @@
             "prompt_per_token": "0.00000015",
             "completion_per_token": "0.00000015",
             "basis": "catalog",
-            "checked_at": "2026-09-30T14:54:34.650Z"
+            "checked_at": "2026-10-01T15:26:29.294Z"
           },
           "context_length": 262144,
           "expiration_date": null,
           "validation": {
             "status": "static-checks",
-            "checked_at": "2026-09-30T14:54:34.522Z"
+            "checked_at": "2026-10-01T15:26:29.101Z"
           },
           "selection": {
             "reason": "Reference CHEAP_ROSTER incumbent, battle-tested in the game.",
@@ -781,13 +781,13 @@
             "prompt_per_token": "0.0000015",
             "completion_per_token": "0.0000075",
             "basis": "catalog",
-            "checked_at": "2026-09-30T14:54:34.650Z"
+            "checked_at": "2026-10-01T15:26:29.294Z"
           },
           "context_length": 262144,
           "expiration_date": null,
           "validation": {
             "status": "static-checks",
-            "checked_at": "2026-09-30T14:54:34.522Z"
+            "checked_at": "2026-10-01T15:26:29.101Z"
           },
           "selection": {
             "reason": "Mistral's premium-priced current tier ($1.50/$7.50 per MTok, above mistral-large-2512), supports reasoning 'none'. mistral-large-2512 is the fallback candidate.",
