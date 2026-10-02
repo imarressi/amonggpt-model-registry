@@ -1,6 +1,6 @@
 # amonggpt-model-registry
 
-Daily-refreshed, versioned roster of OpenRouter models for [AmongGPT](https://github.com/imarressi):
+Weekly-refreshed, versioned roster of OpenRouter models for [AmongGPT](https://github.com/imarressi):
 which model represents each brand, its exact API id, approved generation settings, pricing, and
 availability. The game backend fetches one JSON document, pins it per batch, and never changes a
 competitor mid-batch.
@@ -18,7 +18,7 @@ https://raw.githubusercontent.com/imarressi/amonggpt-model-registry/main/public/
 Backend contract, per batch:
 
 1. Fetch `latest.json`, validate `schema_version === 1` against `schemas/roster.schema.json`.
-2. Check freshness (`freshness.json`): warn past 36 h, refuse new scored batches past 72 h.
+2. Check freshness (`freshness.json`): warn past 8 days (192 h), refuse new scored batches past 10 days (240 h).
 3. Pick the requested track (`economy` is the default) and require the brand slots you need to be
    `active` **on that track only** — a flagship outage never blocks an economy batch.
 4. Persist the full roster JSON + the commit SHA with the batch, and use that frozen copy for every
@@ -48,7 +48,7 @@ GLM-5.3, Qwen3.8-max, and Gemini 3.7+/3.8 (floor is `low`). GPT-6 models don't s
 
 ## How refresh works
 
-Daily at 08:17 UTC (best-effort) and on manual dispatch, `.github/workflows/refresh.yml`:
+Weekly on Mondays at 08:17 UTC (best-effort) and on manual dispatch, `.github/workflows/refresh.yml`:
 
 1. Fetches the catalog (no API key — the endpoint is unauthenticated) with timeout + retries.
 2. Aborts **before writing anything** on fetch/parse errors, a catalog below 200 models, or a >50%

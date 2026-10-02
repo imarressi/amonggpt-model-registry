@@ -1,5 +1,5 @@
 {
-  "_comment": "Human-approved model configurations. Changes land only via PR. The daily refresh verifies these against the live catalog; it never promotes anything on its own. 'reasoning off' is a hard game requirement (harness sends {enabled:false}; Google gets {effort:'minimal'}) — models whose catalog entry says reasoning.mandatory=true without a supported minimal effort are ineligible.",
+  "_comment": "Human-approved model configurations. Changes land only via PR. The weekly refresh verifies these against the live catalog; it never promotes anything on its own. 'reasoning off' is a hard game requirement (harness sends {enabled:false}; Google gets {effort:'minimal'}) — models whose catalog entry says reasoning.mandatory=true without a supported minimal effort are ineligible.",
   "openai": {
     "economy": {
       "model_id": "openai/gpt-6-luna",

@@ -1,10 +1,11 @@
-# Daily roster refresh. No inference key: the catalog endpoint is unauthenticated, and this
+# Weekly roster refresh (Mondays 08:17 UTC): the game keeps one set of models for a whole week, so
+# results within a week are comparable. Run it by hand (workflow_dispatch) for an urgent change. No inference key: the catalog endpoint is unauthenticated, and this
 # workflow only ever needs the repo-scoped GITHUB_TOKEN. Scheduled runs are best-effort, so
 # public/freshness.json carries the timestamps consumers gate on.
 name: refresh
 on:
   schedule:
-    - cron: '17 8 * * *'
+    - cron: '17 8 * * 1'
   workflow_dispatch:
 
 concurrency:
@@ -70,4 +71,4 @@ jobs:
         run: |
           gh issue create \
             --title "Roster refresh FAILED $(date -u +%Y-%m-%d)" \
-            --body "The daily refresh did not publish. The last valid roster is still live. Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" || true
+            --body "The weekly refresh did not publish. The last valid roster is still live. Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" || true

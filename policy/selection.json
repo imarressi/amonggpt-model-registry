@@ -20,5 +20,5 @@
   "catalog_min_models": 200,
   "catalog_max_shrink_ratio": 0.5,
   "price_change_alert_pct": 25,
-  "freshness": { "warn_hours": 36, "block_hours": 72 }
+  "freshness": { "warn_hours": 192, "block_hours": 240 }
 }

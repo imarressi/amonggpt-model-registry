@@ -1,5 +1,5 @@
 /**
- * Daily refresh orchestrator.
+ * Weekly refresh orchestrator (Mondays, .github/workflows/refresh.yml).
  *
  *   pnpm refresh                                   live catalog, writes public/ + reports/
  *   pnpm refresh -- --catalog <file>               offline catalog (fixtures, CI for PRs)
