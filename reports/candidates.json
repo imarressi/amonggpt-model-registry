@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T15:26:29.101Z",
+  "generated_at": "2026-10-05T17:10:49.054Z",
   "candidates": [
     {
       "brand_id": "openai",
@@ -87,7 +87,7 @@
       "prompt_per_mtok": 0.027,
       "completion_per_mtok": 0.201,
       "est_cost_per_call_usd": 0.00006663,
-      "vs_economy_pct": -65,
+      "vs_economy_pct": -83,
       "context_length": 60000,
       "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
     },
@@ -97,7 +97,7 @@
       "prompt_per_mtok": 0.049999999999999996,
       "completion_per_mtok": 0.08,
       "est_cost_per_call_usd": 0.00008539999999999999,
-      "vs_economy_pct": -55,
+      "vs_economy_pct": -78,
       "context_length": 131072,
       "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
     },
@@ -107,7 +107,7 @@
       "prompt_per_mtok": 0.049999999999999996,
       "completion_per_mtok": 0.33,
       "est_cost_per_call_usd": 0.00011789999999999999,
-      "vs_economy_pct": -38,
+      "vs_economy_pct": -70,
       "context_length": 131072,
       "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
     },
@@ -117,38 +117,28 @@
       "prompt_per_mtok": 0.09999999999999999,
       "completion_per_mtok": 0.3,
       "est_cost_per_call_usd": 0.00018899999999999999,
-      "vs_economy_pct": -1,
+      "vs_economy_pct": -52,
       "context_length": 1310720,
       "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
     },
     {
-      "brand_id": "deepseek",
-      "model_id": "deepseek/deepseek-v4-flash",
-      "prompt_per_mtok": 0.04186,
-      "completion_per_mtok": 0.08372,
-      "est_cost_per_call_usd": 0.0000736736,
-      "vs_economy_pct": -60,
-      "context_length": 1048576,
+      "brand_id": "meta",
+      "model_id": "meta-llama/llama-guard-4-12b",
+      "prompt_per_mtok": 0.18,
+      "completion_per_mtok": 0.18,
+      "est_cost_per_call_usd": 0.0002934,
+      "vs_economy_pct": -26,
+      "context_length": 163840,
       "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
     },
     {
-      "brand_id": "deepseek",
-      "model_id": "deepseek/deepseek-v4.1-flash",
-      "prompt_per_mtok": 0.03,
-      "completion_per_mtok": 0.5,
-      "est_cost_per_call_usd": 0.00010999999999999999,
-      "vs_economy_pct": -40,
+      "brand_id": "meta",
+      "model_id": "meta-llama/llama-4-maverick",
+      "prompt_per_mtok": 0.1875,
+      "completion_per_mtok": 0.6525,
+      "est_cost_per_call_usd": 0.00036607500000000005,
+      "vs_economy_pct": -7,
       "context_length": 1048576,
-      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
-    },
-    {
-      "brand_id": "moonshot",
-      "model_id": "moonshotai/kimi-k2.6",
-      "prompt_per_mtok": 0.43415,
-      "completion_per_mtok": 1.8279999999999998,
-      "est_cost_per_call_usd": 0.000888865,
-      "vs_economy_pct": -8,
-      "context_length": 262144,
       "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
     },
     {

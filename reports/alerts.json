@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-10-01T15:26:29.101Z",
+  "generated_at": "2026-10-05T17:10:49.054Z",
   "alerts": [
     {
       "level": "warning",
       "code": "price-change",
-      "message": "deepseek/flagship (deepseek/deepseek-v4-pro) prompt_per_token moved -73.3%"
+      "message": "meta/economy (meta-llama/llama-3.3-70b-instruct) prompt_per_token moved 120.0%"
     },
     {
       "level": "warning",
       "code": "price-change",
-      "message": "deepseek/flagship (deepseek/deepseek-v4-pro) completion_per_token moved -73.3%"
+      "message": "meta/economy (meta-llama/llama-3.3-70b-instruct) completion_per_token moved 56.3%"
     },
     {
       "level": "warning",
       "code": "price-change",
-      "message": "moonshot/flagship (moonshotai/kimi-k3) prompt_per_token moved -78.1%"
+      "message": "deepseek/economy (deepseek/deepseek-v4-flash-0731) prompt_per_token moved 40.7%"
     },
     {
       "level": "warning",
       "code": "price-change",
-      "message": "moonshot/flagship (moonshotai/kimi-k3) completion_per_token moved -33.3%"
+      "message": "moonshot/flagship (moonshotai/kimi-k3) completion_per_token moved 40.0%"
     }
   ]
 }
