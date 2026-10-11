@@ -22,12 +22,13 @@
   },
   "anthropic": {
     "economy": {
-      "model_id": "anthropic/claude-haiku-4.5",
-      "request_parameters": { "temperature": 0.9, "reasoning": { "enabled": false } },
+      "model_id": "anthropic/claude-haiku-5.5",
+      "request_parameters": { "reasoning": { "enabled": false } },
       "provider_policy": { "require_parameters": false, "allow_fallbacks": true },
-      "reason": "Reference CHEAP_ROSTER incumbent, battle-tested in the game.",
-      "evidence": ["reference CHEAP_ROSTER (slugs verified live)", "OpenRouter catalog 2026-09-29: reasoning.mandatory=false"],
-      "approved_at": "2026-09-29"
+      "reason": "Newer Haiku generation (claude-haiku-5.5-20261007) that honors reasoning-off, at a tenth of Haiku 4.5's price ($0.10/$0.50 per MTok). Approved by the game's owner on 2026-10-11 as the better model; the price is a bonus.",
+      "evidence": ["OpenRouter catalog 2026-10-11: reasoning.mandatory=false, supported_efforts low..max, context 1,000,000, max_completion_tokens 128,000", "OpenRouter catalog 2026-10-11: 'temperature' is not in supported_parameters (as for the GPT-6 models); the config omits it", "AmongGPT gateway 2026-10-11: reasoning-off request returns 200 with no reasoning tokens; 331 stored act prompts parsed at 98.8 %"],
+      "notes": "Claude Haiku 5.5 does not support the temperature parameter; OpenRouter drops it silently. Do not send require_parameters=true with temperature for this config. The catalog pricing has an override above 100,000 prompt tokens (0.5/2.5 per MTok) that the game never reaches (about 1,500 prompt tokens per call).",
+      "approved_at": "2026-10-11"
     },
     "flagship": {
       "model_id": "anthropic/claude-opus-5",
