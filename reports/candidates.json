@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T17:10:49.054Z",
+  "generated_at": "2026-10-12T17:59:03.089Z",
   "candidates": [
     {
       "brand_id": "openai",
@@ -19,6 +19,16 @@
       "est_cost_per_call_usd": 0.00020199999999999998,
       "vs_economy_pct": -6,
       "context_length": 1047576,
+      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
+    },
+    {
+      "brand_id": "anthropic",
+      "model_id": "anthropic/claude-haiku-5.5",
+      "prompt_per_mtok": 0.09999999999999999,
+      "completion_per_mtok": 0.5,
+      "est_cost_per_call_usd": 0.00021499999999999997,
+      "vs_economy_pct": -90,
+      "context_length": 1000000,
       "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
     },
     {
@@ -72,16 +82,6 @@
       "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
     },
     {
-      "brand_id": "google",
-      "model_id": "google/gemini-2.5-flash-lite",
-      "prompt_per_mtok": 0.09999999999999999,
-      "completion_per_mtok": 0.39999999999999997,
-      "est_cost_per_call_usd": 0.00020199999999999998,
-      "vs_economy_pct": -65,
-      "context_length": 1048576,
-      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
-    },
-    {
       "brand_id": "meta",
       "model_id": "meta-llama/llama-3.2-1b-instruct",
       "prompt_per_mtok": 0.027,
@@ -113,22 +113,22 @@
     },
     {
       "brand_id": "meta",
-      "model_id": "meta-llama/llama-4-scout",
-      "prompt_per_mtok": 0.09999999999999999,
-      "completion_per_mtok": 0.3,
-      "est_cost_per_call_usd": 0.00018899999999999999,
-      "vs_economy_pct": -52,
-      "context_length": 1310720,
-      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
-    },
-    {
-      "brand_id": "meta",
       "model_id": "meta-llama/llama-guard-4-12b",
       "prompt_per_mtok": 0.18,
       "completion_per_mtok": 0.18,
       "est_cost_per_call_usd": 0.0002934,
       "vs_economy_pct": -26,
       "context_length": 163840,
+      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
+    },
+    {
+      "brand_id": "meta",
+      "model_id": "meta-llama/llama-4-scout",
+      "prompt_per_mtok": 0.18,
+      "completion_per_mtok": 0.59,
+      "est_cost_per_call_usd": 0.0003467,
+      "vs_economy_pct": -12,
+      "context_length": 1310720,
       "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
     },
     {
@@ -144,10 +144,10 @@
     {
       "brand_id": "mistral",
       "model_id": "mistralai/mistral-nemo",
-      "prompt_per_mtok": 0.019000000000000003,
+      "prompt_per_mtok": 0.029,
       "completion_per_mtok": 0.03,
-      "est_cost_per_call_usd": 0.0000324,
-      "vs_economy_pct": -87,
+      "est_cost_per_call_usd": 0.0000474,
+      "vs_economy_pct": -81,
       "context_length": 131072,
       "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
     },

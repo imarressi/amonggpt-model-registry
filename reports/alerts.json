@@ -1,25 +1,35 @@
 {
-  "generated_at": "2026-10-05T17:10:49.054Z",
+  "generated_at": "2026-10-12T17:59:03.089Z",
   "alerts": [
     {
-      "level": "warning",
-      "code": "price-change",
-      "message": "meta/economy (meta-llama/llama-3.3-70b-instruct) prompt_per_token moved 120.0%"
+      "level": "error",
+      "code": "slot-suspended",
+      "message": "anthropic/flagship (anthropic/claude-opus-5) suspended: approved request parameter \"temperature\" unsupported by the model"
+    },
+    {
+      "level": "error",
+      "code": "slot-deactivated",
+      "message": "anthropic/flagship went active → suspended: approved request parameter \"temperature\" unsupported by the model"
     },
     {
       "level": "warning",
       "code": "price-change",
-      "message": "meta/economy (meta-llama/llama-3.3-70b-instruct) completion_per_token moved 56.3%"
+      "message": "deepseek/economy (deepseek/deepseek-v4-flash-0731) completion_per_token moved -50.0%"
     },
     {
       "level": "warning",
       "code": "price-change",
-      "message": "deepseek/economy (deepseek/deepseek-v4-flash-0731) prompt_per_token moved 40.7%"
+      "message": "deepseek/flagship (deepseek/deepseek-v4-pro) prompt_per_token moved 97.5%"
     },
     {
       "level": "warning",
       "code": "price-change",
-      "message": "moonshot/flagship (moonshotai/kimi-k3) completion_per_token moved 40.0%"
+      "message": "deepseek/flagship (deepseek/deepseek-v4-pro) completion_per_token moved 97.5%"
+    },
+    {
+      "level": "warning",
+      "code": "price-change",
+      "message": "moonshot/flagship (moonshotai/kimi-k3) completion_per_token moved -28.6%"
     }
   ]
 }
