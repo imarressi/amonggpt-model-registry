@@ -1,35 +1,45 @@
 {
-  "generated_at": "2026-10-12T17:59:03.089Z",
+  "generated_at": "2026-10-13T04:53:06.934Z",
   "alerts": [
     {
-      "level": "error",
-      "code": "slot-suspended",
-      "message": "anthropic/flagship (anthropic/claude-opus-5) suspended: approved request parameter \"temperature\" unsupported by the model"
-    },
-    {
-      "level": "error",
-      "code": "slot-deactivated",
-      "message": "anthropic/flagship went active → suspended: approved request parameter \"temperature\" unsupported by the model"
+      "level": "warning",
+      "code": "price-change",
+      "message": "anthropic/economy (anthropic/claude-haiku-5.5) prompt_per_token moved -90.0%"
     },
     {
       "level": "warning",
       "code": "price-change",
-      "message": "deepseek/economy (deepseek/deepseek-v4-flash-0731) completion_per_token moved -50.0%"
+      "message": "anthropic/economy (anthropic/claude-haiku-5.5) completion_per_token moved -90.0%"
+    },
+    {
+      "level": "warning",
+      "code": "model-changed",
+      "message": "anthropic/economy model changed anthropic/claude-haiku-4.5 → anthropic/claude-haiku-5.5 (policy PR)"
     },
     {
       "level": "warning",
       "code": "price-change",
-      "message": "deepseek/flagship (deepseek/deepseek-v4-pro) prompt_per_token moved 97.5%"
+      "message": "meta/economy (meta-llama/llama-3.3-70b-instruct) prompt_per_token moved 168.2%"
     },
     {
       "level": "warning",
       "code": "price-change",
-      "message": "deepseek/flagship (deepseek/deepseek-v4-pro) completion_per_token moved 97.5%"
+      "message": "meta/economy (meta-llama/llama-3.3-70b-instruct) completion_per_token moved 58.0%"
     },
     {
       "level": "warning",
       "code": "price-change",
-      "message": "moonshot/flagship (moonshotai/kimi-k3) completion_per_token moved -28.6%"
+      "message": "deepseek/flagship (deepseek/deepseek-v4-pro) prompt_per_token moved 131.6%"
+    },
+    {
+      "level": "warning",
+      "code": "price-change",
+      "message": "deepseek/flagship (deepseek/deepseek-v4-pro) completion_per_token moved 131.6%"
+    },
+    {
+      "level": "warning",
+      "code": "price-change",
+      "message": "moonshot/flagship (moonshotai/kimi-k3) completion_per_token moved 35.0%"
     }
   ]
 }
