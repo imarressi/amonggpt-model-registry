@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T15:40:37.913Z",
+  "generated_at": "2026-10-26T15:14:18.597Z",
   "candidates": [
     {
       "brand_id": "openai",
@@ -24,10 +24,10 @@
     {
       "brand_id": "google",
       "model_id": "google/gemma-3-4b-it",
-      "prompt_per_mtok": 0.049999999999999996,
-      "completion_per_mtok": 0.09999999999999999,
-      "est_cost_per_call_usd": 0.000088,
-      "vs_economy_pct": -85,
+      "prompt_per_mtok": 0.04,
+      "completion_per_mtok": 0.049999999999999996,
+      "est_cost_per_call_usd": 0.0000665,
+      "vs_economy_pct": -88,
       "context_length": 131072,
       "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
     },
@@ -63,6 +63,16 @@
     },
     {
       "brand_id": "google",
+      "model_id": "google/gemini-2.5-flash-lite",
+      "prompt_per_mtok": 0.09999999999999999,
+      "completion_per_mtok": 0.39999999999999997,
+      "est_cost_per_call_usd": 0.00020199999999999998,
+      "vs_economy_pct": -65,
+      "context_length": 1048576,
+      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
+    },
+    {
+      "brand_id": "google",
       "model_id": "google/gemma-4-31b-it",
       "prompt_per_mtok": 0.19999999999999998,
       "completion_per_mtok": 0.39999999999999997,
@@ -94,10 +104,10 @@
     {
       "brand_id": "meta",
       "model_id": "meta-llama/llama-3.2-3b-instruct",
-      "prompt_per_mtok": 0.0509,
-      "completion_per_mtok": 0.335,
-      "est_cost_per_call_usd": 0.0001199,
-      "vs_economy_pct": -37,
+      "prompt_per_mtok": 0.049999999999999996,
+      "completion_per_mtok": 0.33,
+      "est_cost_per_call_usd": 0.00011789999999999999,
+      "vs_economy_pct": -38,
       "context_length": 131072,
       "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
     },
@@ -109,26 +119,6 @@
       "est_cost_per_call_usd": 0.00018899999999999999,
       "vs_economy_pct": -1,
       "context_length": 1310720,
-      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
-    },
-    {
-      "brand_id": "deepseek",
-      "model_id": "deepseek/deepseek-v4.1-flash",
-      "prompt_per_mtok": 0.0328,
-      "completion_per_mtok": 0.08,
-      "est_cost_per_call_usd": 0.000059600000000000005,
-      "vs_economy_pct": -76,
-      "context_length": 1048576,
-      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
-    },
-    {
-      "brand_id": "deepseek",
-      "model_id": "deepseek/deepseek-v4-flash",
-      "prompt_per_mtok": 0.091,
-      "completion_per_mtok": 0.182,
-      "est_cost_per_call_usd": 0.00016015999999999998,
-      "vs_economy_pct": -34,
-      "context_length": 1048576,
       "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
     },
     {
@@ -153,22 +143,22 @@
     },
     {
       "brand_id": "mistral",
+      "model_id": "mistralai/mistral-small-3.2-24b-instruct",
+      "prompt_per_mtok": 0.075,
+      "completion_per_mtok": 0.19999999999999998,
+      "est_cost_per_call_usd": 0.0001385,
+      "vs_economy_pct": -43,
+      "context_length": 256000,
+      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
+    },
+    {
+      "brand_id": "mistral",
       "model_id": "mistralai/ministral-3b-2512",
       "prompt_per_mtok": 0.09999999999999999,
       "completion_per_mtok": 0.09999999999999999,
       "est_cost_per_call_usd": 0.00016299999999999998,
       "vs_economy_pct": -33,
       "context_length": 131072,
-      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
-    },
-    {
-      "brand_id": "mistral",
-      "model_id": "mistralai/mistral-small-3.2-24b-instruct",
-      "prompt_per_mtok": 0.09375,
-      "completion_per_mtok": 0.25,
-      "est_cost_per_call_usd": 0.00017312500000000002,
-      "vs_economy_pct": -29,
-      "context_length": 256000,
       "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
     },
     {
