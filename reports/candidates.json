@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T15:14:18.597Z",
+  "generated_at": "2026-11-02T18:26:17.745Z",
   "candidates": [
     {
       "brand_id": "openai",
@@ -24,10 +24,10 @@
     {
       "brand_id": "google",
       "model_id": "google/gemma-3-4b-it",
-      "prompt_per_mtok": 0.04,
-      "completion_per_mtok": 0.049999999999999996,
-      "est_cost_per_call_usd": 0.0000665,
-      "vs_economy_pct": -88,
+      "prompt_per_mtok": 0.049999999999999996,
+      "completion_per_mtok": 0.09999999999999999,
+      "est_cost_per_call_usd": 0.000088,
+      "vs_economy_pct": -85,
       "context_length": 131072,
       "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
     },
@@ -104,10 +104,10 @@
     {
       "brand_id": "meta",
       "model_id": "meta-llama/llama-3.2-3b-instruct",
-      "prompt_per_mtok": 0.049999999999999996,
-      "completion_per_mtok": 0.33,
-      "est_cost_per_call_usd": 0.00011789999999999999,
-      "vs_economy_pct": -38,
+      "prompt_per_mtok": 0.0509,
+      "completion_per_mtok": 0.335,
+      "est_cost_per_call_usd": 0.0001199,
+      "vs_economy_pct": -37,
       "context_length": 131072,
       "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
     },
@@ -119,6 +119,26 @@
       "est_cost_per_call_usd": 0.00018899999999999999,
       "vs_economy_pct": -1,
       "context_length": 1310720,
+      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
+    },
+    {
+      "brand_id": "deepseek",
+      "model_id": "deepseek/deepseek-v4.1-flash",
+      "prompt_per_mtok": 0.045,
+      "completion_per_mtok": 0.5,
+      "est_cost_per_call_usd": 0.0001325,
+      "vs_economy_pct": -37,
+      "context_length": 1048576,
+      "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
+    },
+    {
+      "brand_id": "deepseek",
+      "model_id": "deepseek/deepseek-v4-flash",
+      "prompt_per_mtok": 0.091,
+      "completion_per_mtok": 0.182,
+      "est_cost_per_call_usd": 0.00016015999999999998,
+      "vs_economy_pct": -24,
+      "context_length": 1048576,
       "note": "cheaper than the current economy pick; not promoted — requires review and a policy PR"
     },
     {

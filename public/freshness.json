@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-10-26T15:14:18.710Z",
-  "catalog_model_count": 466,
-  "registry_version": "2026-10-26-61536b6",
+  "checked_at": "2026-11-02T18:26:17.882Z",
+  "catalog_model_count": 451,
+  "registry_version": "2026-11-02-497c547",
   "warn_after_hours": 192,
   "block_after_hours": 240
 }
